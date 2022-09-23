@@ -1,8 +1,11 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/mariojuniortrab/gin-api-rest/database"
+	"github.com/mariojuniortrab/gin-api-rest/routes"
+)
 
 func main() {
-	r := gin.Default()
-	r.Run()
+	database.DatabaseConnect()
+	routes.HandleRequests()
 }
